@@ -98,25 +98,40 @@ figcaption{font-size:15px;color:var(--quiet);margin-top:12px;max-width:640px}
 .reach p{color:var(--ink2);font-size:20px}
 footer{border-top:1px solid var(--rule);padding-block:24px 40px;color:var(--quiet);font-size:15px}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
+
+/* motion, after the MotionSites craft rules: one entrance sequence on load, one scroll moment */
+@keyframes rise{from{opacity:0;transform:translateY(24px);filter:blur(10px)}}
+header.top[data-enter]{animation:rise .8s cubic-bezier(.16,1,.3,1) both}
+.hello[data-enter] h1{animation:rise .9s cubic-bezier(.16,1,.3,1) .12s both}
+.hello[data-enter] p{animation:rise .9s cubic-bezier(.16,1,.3,1) .26s both}
+.stage{perspective:1600px}
+.stage .tilt{transform-origin:50% 0;animation:rise 1s cubic-bezier(.16,1,.3,1) .42s both}
+@supports (animation-timeline:view()){
+  @keyframes flatten{from{transform:rotateX(16deg) scale(.94);box-shadow:0 40px 60px -30px rgba(0,0,0,.25)}to{transform:none;box-shadow:0 0 0 rgba(0,0,0,0)}}
+  .stage .tilt{animation:flatten linear both;animation-timeline:view();animation-range:entry 0% cover 45%}
+}
+.reel img{transition:transform .5s cubic-bezier(.16,1,.3,1)}
+.reel figure:hover img{transform:translateY(-4px)}
+@media (prefers-reduced-motion:reduce){header.top[data-enter],.hello[data-enter] h1,.hello[data-enter] p,.stage .tilt{animation:none!important;transform:none!important;filter:none!important;opacity:1!important}}
 </style>
 </head>
 <body>
 <div class="page">
-  <header class="top">
+  <header class="top" data-enter>
     <b>Abdullah Alarifi</b>
     <nav><a href="#work">Work</a><a href="#cv">CV</a><a href="#contact">Contact</a></nav>
   </header>
 
-  <section class="hello">
+  <section class="hello" data-enter>
     <h1>I work in HR in Riyadh, and I build the tools my teams end up running on.</h1>
     <p>Three years between HR operations and a project-management office taught me where the hours go: reading CVs one by one, chasing reports from site to site, writing the same message over and over. I don't code the traditional way. I design the process, build it with Claude Code and AI agents, and a person still makes the call.</p>
   </section>
 
   <main id="work">
     <article class="work" style="padding-top:0">
-      <figure>
-        <img src="img/sales-dashboard.jpg" alt="Sales dashboard of the B2B platform, in Arabic, with demo data" width="1440" height="900">
-        <figcaption>The sales dashboard. The platform runs in Arabic; the companies on screen are the demo data that ships with it.</figcaption>
+      <figure class="stage">
+        <img class="tilt" src="img/sales-dashboard.jpg" alt="Sales dashboard of the B2B platform, in Arabic, with demo data" width="1440" height="900">
+        <figcaption>The sales dashboard. The platform runs in Arabic; company names are replaced with placeholders.</figcaption>
       </figure>
       <div class="text" style="margin-top:56px">
         <h2>A sales platform that prospects on its own</h2>
@@ -164,11 +179,8 @@ footer{border-top:1px solid var(--rule);padding-block:24px 40px;color:var(--quie
       <div class="text">
         <h2>Websites for small companies</h2>
         <p class="when">2026</p>
-        <p>Bilingual sites, Arabic first with a full right-to-left layout, each with a short brand guide for logo, colour, type and tone. This is the one for a freight company in Riyadh.</p>
+        <p>Bilingual sites, Arabic first with a full right-to-left layout, each with a short brand guide for logo, colour, type and tone. So far: a freight company in Riyadh and a small creative studio.</p>
       </div>
-      <figure>
-        <img src="img/regalex.jpg" alt="Homepage of a bilingual freight-company website" width="1440" height="900" loading="lazy">
-      </figure>
     </article>
   </main>
 
