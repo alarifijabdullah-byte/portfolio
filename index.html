@@ -107,6 +107,15 @@ tr.sel td:first-child{box-shadow:inset 2px 0 0 var(--accent)}
 .case h3{font-size:clamp(1.5rem,2.4vw,2rem);line-height:1.2;letter-spacing:-.02em;font-weight:500;margin:0 0 8px}
 .case .ctx{font-size:14px;color:var(--muted);margin:0 0 24px}
 .case p.body{margin:0;color:var(--ink2);max-width:58ch}
+.flow{list-style:none;margin:32px 0 0;padding:0;display:grid;grid-template-columns:repeat(6,minmax(0,1fr));border:1px solid var(--line2);border-radius:12px;background:var(--card);overflow:hidden}
+.flow li{padding:16px;border-left:1px solid var(--line);min-width:0;position:relative}
+.flow li:first-child{border-left:0}
+.flow li b{display:block;font-weight:500;font-size:14px;margin-bottom:2px}
+.flow li span{font-size:12.5px;color:var(--muted);line-height:1.4;display:block}
+.flow li:not(:last-child)::after{content:"";position:absolute;right:-5px;top:22px;width:8px;height:8px;border-top:1px solid var(--line2);border-right:1px solid var(--line2);transform:rotate(45deg);background:var(--card);z-index:1}
+.flow li.end{background:var(--accent-bg)} .flow li.end b{color:var(--accent)}
+@media (max-width:900px){.flow{grid-template-columns:repeat(3,minmax(0,1fr))}.flow li:nth-child(4){border-left:0}.flow li:nth-child(n+4){border-top:1px solid var(--line)}.flow li:nth-child(3)::after{display:none}}
+@media (max-width:480px){.flow{grid-template-columns:repeat(2,minmax(0,1fr))}.flow li{border-left:1px solid var(--line)!important;border-top:1px solid var(--line)}.flow li:nth-child(odd){border-left:0!important}.flow li:nth-child(-n+2){border-top:0}.flow li::after{display:none}}
 .memo{display:grid;grid-template-columns:64px minmax(0,1fr);gap:4px 16px;margin-top:24px;padding:16px 0 0;border-top:1px dashed var(--line2);font-size:14px}
 .memo dt{font-family:var(--mono);font-size:12px;color:var(--muted);padding-top:2px}
 .memo dd{margin:0;color:var(--ink)}
@@ -193,7 +202,7 @@ footer{border-top:1px solid var(--line);padding-block:24px;color:var(--muted);fo
         <div class="sec"></div><div class="l" style="width:76%"></div><div class="l hl" style="width:66%"></div><div class="l" style="width:58%"></div>
       </div>
       <div class="win">
-        <div class="wbar"><span class="t">HR Specialist · shortlist</span><span class="note">sample data</span></div>
+        <div class="wbar"><span class="t">Applications · HR Specialist</span><span class="note">sample data</span></div>
         <div class="wbody">
           <table>
             <tr><th>Applicant</th><th>CV</th><th class="num">Exp.</th><th>Match</th><th>Status</th></tr>
@@ -212,11 +221,19 @@ footer{border-top:1px solid var(--line);padding-block:24px;color:var(--muted);fo
     <div class="sec-head"><h2>Selected work</h2><span>Employer names and internal data removed</span></div>
 
     <article class="case">
-      <h3>AI CV screening</h3>
+      <h3>AI CV screening platform</h3>
       <p class="ctx">Recruitment · Construction company · 2025</p>
-      <p class="body">Hiring rounds brought in hundreds of CVs in Arabic and English, many of them scanned. I oversaw an automated pipeline that reads each CV with OCR, scores it against the role's requirements and hands HR a ranked shortlist to review. The shortlist at the top of this page shows how it looks.</p>
-      <dl class="memo"><dt>Before</dt><dd>Every CV read by hand, one at a time</dd><dt>After</dt><dd class="after">Hundreds of applications ranked across five roles</dd></dl>
-      <p class="tools">OCR · Claude · n8n · Arabic and English</p>
+      <p class="body">Candidates apply through an online form. The platform collects every CV from the form on its own, reads it in Arabic or English, including scanned copies, filters out the ones that miss the role's must-haves and ranks the rest. HR opens a ready shortlist instead of a pile of files, and makes the call.</p>
+      <ol class="flow" aria-label="How the platform works">
+        <li><b>Form</b><span>Candidate applies</span></li>
+        <li><b>Collect</b><span>CV pulled in automatically</span></li>
+        <li><b>Read</b><span>OCR, Arabic and English</span></li>
+        <li><b>Filter</b><span>Must-haves checked</span></li>
+        <li><b>Rank</b><span>Scored against the role</span></li>
+        <li class="end"><b>Shortlist</b><span>HR reviews and decides</span></li>
+      </ol>
+      <dl class="memo"><dt>Before</dt><dd>CVs downloaded from the form and read one by one</dd><dt>After</dt><dd class="after">Every application arrives filtered and ranked, across five open roles</dd></dl>
+      <p class="tools">Online forms · OCR · Claude · n8n · Arabic and English</p>
     </article>
 
     <article class="case split rev">
