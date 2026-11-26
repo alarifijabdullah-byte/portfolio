@@ -5,127 +5,167 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Abdullah Alarifi</title>
 <meta name="claude:viewport-fit-sides" content="cover">
-<meta name="description" content="Abdullah Alarifi — HR specialist in Riyadh who builds HR and project-management systems with AI.">
+<meta name="description" content="Abdullah Alarifi, HR specialist in Riyadh. I turn recruitment, training and project-reporting processes into working tools.">
 <meta property="og:title" content="Abdullah Alarifi">
-<meta property="og:description" content="HR specialist in Riyadh who builds HR and project-management systems with AI.">
+<meta property="og:description" content="HR specialist in Riyadh. I turn recruitment, training and project-reporting processes into working tools.">
 <meta property="og:image" content="img/regalex.jpg">
-<meta name="theme-color" content="#ffffff">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23111'/%3E%3Ctext x='16' y='22' font-family='Arial' font-weight='700' font-size='16' fill='white' text-anchor='middle'%3EAA%3C/text%3E%3C/svg%3E">
+<meta name="theme-color" content="#f7f4ee">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%231f1b16'/%3E%3Ctext x='16' y='21.5' font-family='Arial' font-weight='600' font-size='14' fill='%23f7f4ee' text-anchor='middle'%3EAA%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap">
 <style>
-/* Layout: plain personal site. Narrow header, case studies as text-left / window-right rows, résumé lists below. One accent (green) used for links and status only. */
+/*
+  Direction (unslop pass)
+  Product:   portfolio of an HR specialist in Riyadh who builds recruitment, reporting and sales tools; read by hiring managers
+  Character: exact, practical, a little warm
+  World:     an HR office: CV stacks, approval forms, weekly status sheets. Warm paper neutrals.
+  Moments:   the hero shortlist with a CV sheet behind it; the real website screenshot
+  Signature: a "Before / After" memo line on every project, and an approval-green accent used only for "approved" states and links
+*/
 :root{
   color-scheme:light;
-  --bg:#FFFFFF; --soft:#F6F6F4; --ink:#111111; --ink2:#3D3D3A; --muted:#75736E; --line:#E7E6E2;
-  --accent:#0B6E4F; --ok:#16794C; --warn:#B4541C; --bad:#B42318;
+  --bg:#F7F4EE; --card:#FDFBF7; --raised:#EFE9DF; --line:rgba(31,27,22,.09); --line2:rgba(31,27,22,.16);
+  --ink:#1F1B16; --ink2:#5E554A; --muted:#7B7266;
+  --accent:#2F6B4F; --accent-bg:#E3EDE6; --warn:#9A5A1E; --warn-bg:#F4E7D8; --bad:#B42B2B; --bad-bg:#F6E1DE;
   --sans:"Geist",ui-sans-serif,system-ui,-apple-system,"Segoe UI",Arial,sans-serif;
   --mono:"Geist Mono",ui-monospace,Menlo,monospace;
+  --ease:cubic-bezier(.22,1,.36,1);
 }
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
-body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.65 var(--sans);-webkit-font-smoothing:antialiased}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 var(--sans);-webkit-font-smoothing:antialiased}
 :root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
 img{max-width:100%;display:block}
 a{color:inherit;text-decoration:none}
 :focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
-.wrap{max-width:1120px;margin:0 auto;padding-left:max(24px,env(safe-area-inset-left,0px));padding-right:max(24px,env(safe-area-inset-right,0px))}
-.u{background:linear-gradient(currentColor,currentColor) 0 100%/0 1px no-repeat;transition:background-size .3s ease}
-.u:hover{background-size:100% 1px}
+.wrap{max-width:1152px;margin:0 auto;padding-left:max(24px,env(safe-area-inset-left,0px));padding-right:max(24px,env(safe-area-inset-right,0px))}
+.link{color:var(--accent);text-decoration:underline;text-decoration-color:rgba(47,107,79,.3);text-underline-offset:3px;transition:text-decoration-color .2s var(--ease)}
+.link:hover{text-decoration-color:var(--accent)}
 
-header.site{display:flex;justify-content:space-between;align-items:center;padding-block:28px;font-size:15px}
-header.site .name{font-weight:600}
-header.site nav{display:flex;gap:28px;color:var(--ink2)}
-@media (max-width:640px){header.site nav{gap:18px}header.site nav a:nth-child(2){display:none}}
+/* header */
+header.site{display:flex;justify-content:space-between;align-items:center;height:64px;font-size:15px}
+header.site .name{font-weight:500}
+header.site nav{display:flex;gap:24px;color:var(--ink2)}
+header.site nav a{transition:color .2s var(--ease)}
+header.site nav a:hover{color:var(--ink)}
+@media (max-width:640px){header.site nav a.hide-s{display:none}}
 
-.intro{padding-block:72px 96px;display:grid;grid-template-columns:1.4fr 1fr;gap:56px;align-items:end}
-.intro>*{min-width:0}
-.intro h1{font-size:clamp(2.4rem,5.4vw,4.4rem);line-height:1.04;letter-spacing:-.035em;font-weight:600;margin:0;text-wrap:balance}
-.intro h1 span{color:var(--muted)}
-.intro p{margin:0 0 18px;color:var(--ink2);font-size:17px;max-width:46ch}
-.facts{display:grid;grid-template-columns:auto 1fr;gap:6px 20px;font-size:14.5px;margin:0}
-.facts dt{color:var(--muted)} .facts dd{margin:0}
-@media (max-width:860px){.intro{grid-template-columns:minmax(0,1fr);gap:28px;padding-block:40px 64px}}
-.fade{animation:fade .8s cubic-bezier(.22,1,.36,1) both}
-.fade.d2{animation-delay:.12s}
-@keyframes fade{from{opacity:0;transform:translateY(12px)}}
+/* hero: asymmetric split, text vs. the shortlist moment */
+.hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:64px;align-items:center;padding-block:64px 96px}
+.hero>*{min-width:0}
+.hero .role{font-size:15px;color:var(--ink2);margin:0 0 16px}
+.hero h1{font-size:clamp(2.25rem,4.4vw,3.5rem);line-height:1.08;letter-spacing:-.03em;font-weight:500;margin:0 0 20px;text-wrap:balance}
+.hero p{margin:0 0 32px;color:var(--ink2);font-size:17px;max-width:44ch}
+.actions{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-flex;align-items:center;gap:8px;height:44px;padding:0 20px;border-radius:10px;font:500 15px var(--sans);border:1px solid var(--line2);background:var(--card);color:var(--ink);cursor:pointer;transition:background-color .2s var(--ease),border-color .2s var(--ease),transform .1s var(--ease)}
+.btn:hover{border-color:var(--ink2)} .btn:active{transform:scale(.98)}
+.btn.primary{background:var(--ink);border-color:var(--ink);color:var(--bg)}
+.btn.primary:hover{background:#3a332a}
+.btn .meta{font-family:var(--mono);font-size:12px;color:var(--muted)}
+.btn.primary .meta{color:#B9B0A3}
+.enter{animation:enter .7s var(--ease) both}.enter.d2{animation-delay:.08s}
+@keyframes enter{from{opacity:0;transform:translateY(8px)}}
+@media (max-width:900px){.hero{grid-template-columns:minmax(0,1fr);gap:40px;padding-block:32px 64px}}
 
-.label{font-family:var(--mono);font-size:12.5px;color:var(--muted);letter-spacing:.02em;margin:0 0 28px;padding-top:20px;border-top:1px solid var(--ink)}
+/* the moment: a CV sheet behind a shortlist window */
+.stage{position:relative;padding:32px 0 0 48px}
+.sheet{position:absolute;top:0;left:0;width:56%;aspect-ratio:1/1.3;background:#fff;border:1px solid var(--line);border-radius:6px;box-shadow:0 1px 2px rgba(31,27,22,.06),0 8px 24px -12px rgba(31,27,22,.18);transform:rotate(-3deg);padding:20px;overflow:hidden}
+.sheet .l{height:6px;border-radius:3px;background:var(--raised);margin-bottom:8px}
+.sheet .l.h{height:10px;width:55%;background:#E2DACD;margin-bottom:14px}
+.sheet .hl{background:rgba(47,107,79,.18)}
+.sheet .sec{height:6px;width:30%;background:#E2DACD;border-radius:3px;margin:16px 0 10px}
+.win{position:relative;background:var(--card);border:1px solid var(--line2);border-radius:14px;overflow:hidden;box-shadow:0 1px 2px rgba(31,27,22,.05),0 16px 40px -20px rgba(31,27,22,.25)}
+.wbar{display:flex;align-items:center;gap:12px;height:40px;padding:0 16px;border-bottom:1px solid var(--line);font-size:12.5px;color:var(--muted)}
+.wbar .t{flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:var(--ink2)}
+.wbar .note{font-family:var(--mono);font-size:11px;color:var(--muted)}
+.wbody{padding:8px 16px 12px;overflow-x:auto}
+@media (max-width:900px){.stage{padding:24px 0 0 24px}.sheet{width:60%}}
 
-.case{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:56px;padding-block:56px;border-bottom:1px solid var(--line);align-items:start}
-.case>*,.vis,.win{min-width:0}
-.case:last-of-type{border-bottom:0}
-.case h2{font-size:clamp(1.5rem,2.4vw,1.9rem);letter-spacing:-.02em;line-height:1.2;font-weight:600;margin:0 0 6px}
-.case .ctx{font-size:14px;color:var(--muted);margin:0 0 24px}
-.case dl{margin:0;display:grid;gap:16px}
-.case dt{font-size:13px;font-weight:600;margin-bottom:2px}
-.case dd{margin:0;color:var(--ink2);font-size:15.5px}
-.case .stack{font-family:var(--mono);font-size:12.5px;color:var(--muted);margin-top:22px}
-.outcome{display:flex;gap:14px;align-items:baseline;margin-top:22px;padding-top:18px;border-top:1px solid var(--line)}
-.outcome b{font-size:2rem;font-weight:600;letter-spacing:-.03em;font-variant-numeric:tabular-nums}
-.outcome span{color:var(--ink2);font-size:14.5px}
-@media (max-width:860px){.case{grid-template-columns:minmax(0,1fr);gap:28px;padding-block:44px}.case .vis{order:-1}}
-
-/* window frame for every visual */
-.win{border:1px solid var(--line);border-radius:12px;background:var(--bg);overflow:hidden;box-shadow:0 1px 2px rgba(0,0,0,.04),0 12px 32px -12px rgba(0,0,0,.10);transition:transform .35s cubic-bezier(.22,1,.36,1)}
-.case:hover .win{transform:translateY(-2px)}
-.wbar{display:flex;align-items:center;gap:12px;padding:10px 14px;border-bottom:1px solid var(--line);background:var(--soft);font-size:12.5px;color:var(--muted)}
-.dots{display:flex;gap:6px}.dots i{width:10px;height:10px;border-radius:50%;background:#DEDCD7}
-.wbar .t{flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.tag{font-family:var(--mono);font-size:11px;border:1px solid var(--line);background:var(--bg);border-radius:5px;padding:1px 6px;white-space:nowrap}
-.wbody{padding:16px;font-size:13px;overflow-x:auto}
-.shot{overflow:hidden}
-.shot img{transition:transform .5s cubic-bezier(.22,1,.36,1)}
-.case:hover .shot img{transform:scale(1.02)}
-
-table{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums;min-width:440px}
-th{font-weight:500;color:var(--muted);text-align:left;font-size:12px;padding:6px 8px;border-bottom:1px solid var(--line)}
-td{padding:9px 8px;border-bottom:1px solid var(--line);white-space:nowrap}
+table{width:100%;border-collapse:collapse;font-size:13px;font-variant-numeric:tabular-nums;min-width:400px}
+th{font-weight:400;color:var(--muted);text-align:left;font-size:12px;height:36px;padding:0 8px;border-bottom:1px solid var(--line)}
+td{height:40px;padding:0 8px;border-bottom:1px solid var(--line);white-space:nowrap;color:var(--ink)}
 tr:last-child td{border-bottom:0}
-.av{display:inline-grid;place-items:center;width:24px;height:24px;border-radius:50%;background:var(--soft);border:1px solid var(--line);font-size:10.5px;font-weight:600;margin-right:8px;vertical-align:middle}
-.bar{display:inline-block;width:72px;height:6px;border-radius:4px;background:var(--soft);vertical-align:middle;margin-right:8px;overflow:hidden}
-.bar i{display:block;height:100%;background:var(--ink)}
-.pill{display:inline-block;font-size:11.5px;font-weight:500;border-radius:999px;padding:2px 9px}
-.p-ok{background:#E7F4EC;color:var(--ok)} .p-warn{background:#FBEEE4;color:var(--warn)} .p-bad{background:#FCE9E7;color:var(--bad)} .p-n{background:var(--soft);color:var(--ink2)}
+td.num{text-align:right;font-family:var(--mono);font-size:12.5px}
+th.num{text-align:right}
+tr.sel td{background:var(--raised)}
+tr.sel td:first-child{box-shadow:inset 2px 0 0 var(--accent)}
+.sub{color:var(--muted)}
+.meter{display:inline-block;width:64px;height:4px;border-radius:2px;background:var(--raised);vertical-align:middle;margin-right:8px;overflow:hidden}
+.meter i{display:block;height:100%;background:var(--ink2)}
+.st{display:inline-flex;align-items:center;gap:6px;font-size:12.5px}
+.st::before{content:"";width:6px;height:6px;border-radius:50%;background:currentColor}
+.st.ok{color:var(--accent)} .st.warn{color:var(--warn)} .st.bad{color:var(--bad)} .st.n{color:var(--muted)}
 
-.board{display:grid;grid-template-columns:repeat(4,minmax(120px,1fr));gap:10px;min-width:520px}
-.col h4{margin:0 0 8px;font-size:12px;font-weight:500;color:var(--muted);display:flex;justify-content:space-between}
-.tk{border:1px solid var(--line);border-radius:8px;padding:8px 9px;margin-bottom:8px;background:var(--bg)}
-.tk b{display:block;font-weight:500;font-size:12.5px}
-.tk span{font-size:11.5px;color:var(--muted)}
-.feed{margin-top:8px;border-top:1px solid var(--line);padding-top:10px;display:grid;gap:5px;font-size:12.5px;color:var(--ink2);min-width:520px}
-.feed time{font-family:var(--mono);color:var(--muted);margin-right:10px}
+/* sections */
+.sec-head{display:flex;justify-content:space-between;align-items:baseline;gap:24px;border-top:1px solid var(--ink);padding-top:16px;margin-bottom:8px}
+.sec-head h2{font-size:15px;font-weight:500;margin:0}
+.sec-head span{font-size:13px;color:var(--muted)}
 
-.more{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 56px;padding-block:8px 24px}
-.more div{padding-block:22px;border-top:1px solid var(--line);min-width:0}
-.more h3{margin:0 0 4px;font-size:17px;font-weight:600}
+.case{padding-block:56px;border-bottom:1px solid var(--line)}
+.case:last-of-type{border-bottom:0}
+.case h3{font-size:clamp(1.5rem,2.4vw,2rem);line-height:1.2;letter-spacing:-.02em;font-weight:500;margin:0 0 8px}
+.case .ctx{font-size:14px;color:var(--muted);margin:0 0 24px}
+.case p.body{margin:0;color:var(--ink2);max-width:58ch}
+.memo{display:grid;grid-template-columns:64px minmax(0,1fr);gap:4px 16px;margin-top:24px;padding:16px 0 0;border-top:1px dashed var(--line2);font-size:14px}
+.memo dt{font-family:var(--mono);font-size:12px;color:var(--muted);padding-top:2px}
+.memo dd{margin:0;color:var(--ink)}
+.memo dd.after{color:var(--accent)}
+.tools{font-family:var(--mono);font-size:12px;color:var(--muted);margin-top:16px}
+
+.split{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:64px;align-items:center}
+.split.rev{grid-template-columns:minmax(0,1.15fr) minmax(0,1fr)}
+.split.rev .txt{order:2}
+.split>*{min-width:0}
+.stack-v .txt{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:64px;margin-bottom:40px}
+.stack-v .txt>*{min-width:0}
+@media (max-width:900px){
+  .split,.split.rev,.stack-v .txt{grid-template-columns:minmax(0,1fr);gap:32px}
+  .split.rev .txt{order:0}
+}
+
+.board{display:grid;grid-template-columns:repeat(4,minmax(150px,1fr));gap:12px;min-width:640px;padding-top:8px}
+.col h4{margin:0 0 8px;font-size:12.5px;font-weight:400;color:var(--muted);display:flex;justify-content:space-between}
+.col h4 span{font-family:var(--mono)}
+.tk{border:1px solid var(--line);border-radius:8px;padding:8px 12px;margin-bottom:8px;background:#fff}
+.tk b{display:block;font-weight:500;font-size:13px}
+.tk span{font-size:12px;color:var(--muted)}
+.tk.on{border-color:rgba(47,107,79,.45)}
+.feed{border-top:1px solid var(--line);margin-top:4px;padding-top:12px;display:grid;gap:4px;font-size:12.5px;color:var(--ink2);min-width:640px}
+.feed time{font-family:var(--mono);color:var(--muted);margin-right:12px}
+.shot img{width:100%;height:auto}
+
+.more{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 64px;padding-block:24px 0}
+.more div{padding-block:20px;border-top:1px solid var(--line);min-width:0}
+.more h4{margin:0 0 4px;font-size:16px;font-weight:500}
 .more p{margin:0;color:var(--ink2);font-size:15px}
-@media (max-width:760px){.more{grid-template-columns:1fr}}
+@media (max-width:760px){.more{grid-template-columns:minmax(0,1fr)}}
 
-section.res{padding-block:72px 24px}
-.rows .r{display:grid;grid-template-columns:150px minmax(0,1fr);gap:24px;padding-block:18px;border-top:1px solid var(--line)}
-.rows .r:first-child{border-top:0;padding-top:0}
+section.block{padding-block:96px 0}
+.rows .r{display:grid;grid-template-columns:160px minmax(0,1fr);gap:24px;padding-block:20px;border-top:1px solid var(--line)}
+.rows .r:first-child{border-top:0}
 .rows .yr{font-family:var(--mono);font-size:13px;color:var(--muted);padding-top:2px}
-.rows h3{margin:0;font-size:16.5px;font-weight:600}
-.rows .org{color:var(--muted);font-size:14.5px;margin:0 0 6px}
+.rows h4{margin:0;font-size:16px;font-weight:500}
+.rows .org{color:var(--muted);font-size:14px;margin:0 0 4px}
 .rows p{margin:0;color:var(--ink2);font-size:15px}
-@media (max-width:640px){.rows .r{grid-template-columns:1fr;gap:4px}}
-.two{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:40px}
-.two>div{min-width:0}
-.two h3{margin:0 0 8px;font-size:15px;font-weight:600}
-.two ul{margin:0;padding:0;list-style:none;color:var(--ink2);font-size:15px;display:grid;gap:4px}
-@media (max-width:860px){.two{grid-template-columns:1fr;gap:28px}}
+@media (max-width:640px){.rows .r{grid-template-columns:minmax(0,1fr);gap:4px}}
+.cols{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:40px;padding-top:24px}
+.cols>div{min-width:0}
+.cols h4{margin:0 0 8px;font-size:15px;font-weight:500}
+.cols ul{margin:0;padding:0;list-style:none;color:var(--ink2);font-size:15px;display:grid;gap:4px}
+@media (max-width:860px){.cols{grid-template-columns:minmax(0,1fr);gap:32px}}
 
-.contact{padding-block:96px 72px}
-.contact h2{font-size:clamp(2rem,4.6vw,3.6rem);letter-spacing:-.035em;line-height:1.05;font-weight:600;margin:0 0 32px;max-width:18ch}
-.links{display:flex;flex-wrap:wrap;gap:12px}
-.btn{display:inline-flex;align-items:center;gap:10px;border:1px solid var(--line);border-radius:999px;padding:11px 18px;font-size:15px;background:var(--bg);cursor:pointer;font-family:inherit;color:inherit;transition:border-color .2s,transform .2s}
-.btn:hover{border-color:var(--ink);transform:translateY(-1px)} .btn:active{transform:none}
-.btn.dark{background:var(--ink);color:#fff;border-color:var(--ink)}
-.btn small{font-family:var(--mono);font-size:11.5px;color:var(--muted)}
-.btn.dark small{color:#BDBDB8}
-footer{border-top:1px solid var(--line);padding-block:24px;color:var(--muted);font-size:13.5px}
+.contact{padding-block:128px 96px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:64px;align-items:end}
+.contact>*{min-width:0}
+.contact h2{font-size:clamp(1.75rem,3.4vw,2.75rem);letter-spacing:-.025em;line-height:1.12;font-weight:500;margin:0}
+.contact dl{margin:0;display:grid;grid-template-columns:96px minmax(0,1fr) auto;align-items:center;font-size:15px}
+.contact dt,.contact dd{border-top:1px solid var(--line);height:52px;display:flex;align-items:center;margin:0}
+.contact dt{color:var(--muted)}
+.contact dd.v{font-family:var(--mono);font-size:14px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.copy{font:500 13px var(--sans);color:var(--ink2);background:none;border:0;cursor:pointer;padding:4px 8px;border-radius:6px;transition:background-color .2s var(--ease)}
+.copy:hover{background:var(--raised)}
+@media (max-width:860px){.contact{grid-template-columns:minmax(0,1fr);gap:32px;padding-block:96px 64px}}
+footer{border-top:1px solid var(--line);padding-block:24px;color:var(--muted);font-size:13px}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 </style>
 </head>
@@ -133,173 +173,162 @@ footer{border-top:1px solid var(--line);padding-block:24px;color:var(--muted);fo
 <div class="wrap">
   <header class="site">
     <a class="name" href="#">Abdullah Alarifi</a>
-    <nav><a class="u" href="#work">Work</a><a class="u" href="#experience">Experience</a><a class="u" href="#contact">Contact</a></nav>
+    <nav><a href="#work">Work</a><a class="hide-s" href="#experience">Experience</a><a href="#contact">Contact</a></nav>
   </header>
 
-  <section class="intro">
-    <h1 class="fade">HR specialist who builds the systems <span>HR teams wish they had.</span></h1>
-    <div class="fade d2">
-      <p>I spent three years between HR operations and a project-management office, and most of that time turning slow manual processes into tools people actually use: CV screening, consolidated reporting, tender tracking and sales follow-up. I build them myself with Claude Code and AI agents.</p>
-      <dl class="facts">
-        <dt>Based in</dt><dd>Riyadh, Saudi Arabia</dd>
-        <dt>Focus</dt><dd>HR systems, L&amp;D, PMO reporting, automation</dd>
-        <dt>Languages</dt><dd>Arabic (native), English (C1)</dd>
-      </dl>
+  <section class="hero">
+    <div class="enter">
+      <p class="role">HR specialist · Riyadh</p>
+      <h1>I turn recruitment, training and project reporting into tools that run themselves</h1>
+      <p>Three years across HR operations and a project-management office. I build the tools myself with Claude Code and AI agents, and HR keeps the final say.</p>
+      <div class="actions">
+        <a class="btn primary" href="#work">See the work</a>
+        <a class="btn" href="#contact">Contact</a>
+      </div>
+    </div>
+    <div class="stage enter d2" aria-label="Example: a ranked CV shortlist">
+      <div class="sheet" aria-hidden="true">
+        <div class="l h"></div><div class="l" style="width:80%"></div><div class="l" style="width:62%"></div>
+        <div class="sec"></div><div class="l hl" style="width:92%"></div><div class="l" style="width:84%"></div><div class="l hl" style="width:70%"></div><div class="l" style="width:88%"></div>
+        <div class="sec"></div><div class="l" style="width:76%"></div><div class="l hl" style="width:66%"></div><div class="l" style="width:58%"></div>
+      </div>
+      <div class="win">
+        <div class="wbar"><span class="t">HR Specialist · 148 applications</span><span class="note">sample data</span></div>
+        <div class="wbody">
+          <table>
+            <tr><th>Applicant</th><th>CV</th><th class="num">Exp.</th><th>Match</th><th>Status</th></tr>
+            <tr class="sel"><td>#A-0142</td><td class="sub">Arabic · scanned</td><td class="num">4 yrs</td><td><span class="meter"><i style="width:92%"></i></span>92</td><td><span class="st ok">Interview</span></td></tr>
+            <tr><td>#A-0127</td><td class="sub">English · PDF</td><td class="num">3 yrs</td><td><span class="meter"><i style="width:86%"></i></span>86</td><td><span class="st ok">Interview</span></td></tr>
+            <tr><td>#A-0103</td><td class="sub">Arabic · PDF</td><td class="num">5 yrs</td><td><span class="meter"><i style="width:74%"></i></span>74</td><td><span class="st n">HR review</span></td></tr>
+            <tr><td>#A-0141</td><td class="sub">English · scanned</td><td class="num">2 yrs</td><td><span class="meter"><i style="width:61%"></i></span>61</td><td><span class="st n">HR review</span></td></tr>
+            <tr><td>#A-0109</td><td class="sub">Arabic · Word</td><td class="num">1 yr</td><td><span class="meter"><i style="width:33%"></i></span>33</td><td><span class="st bad">Not a fit</span></td></tr>
+          </table>
+        </div>
+      </div>
     </div>
   </section>
 
   <main id="work">
-    <p class="label">Selected work · client names and data removed</p>
+    <div class="sec-head"><h2>Selected work</h2><span>Employer names and internal data removed</span></div>
 
     <article class="case">
-      <div>
-        <h2>AI CV screening</h2>
-        <p class="ctx">Recruitment · Construction company · 2025</p>
-        <dl>
-          <dt>Problem</dt><dd>Hiring rounds brought in hundreds of CVs in Arabic and English, many of them scanned. The team read every one by hand.</dd>
-          <dt>What I built</dt><dd>An automated pipeline that extracts text with OCR, scores each CV against the role's requirements, and hands HR a ranked shortlist to review.</dd>
-        </dl>
-        <div class="outcome"><b>100s</b><span>of applications screened across five open roles</span></div>
-        <p class="stack">OCR · Claude · n8n · Arabic / English</p>
-      </div>
-      <div class="vis">
-        <div class="win">
-          <div class="wbar"><span class="dots"><i></i><i></i><i></i></span><span class="t">Shortlist — HR Specialist</span><span class="tag">sample data</span></div>
-          <div class="wbody">
-            <table>
-              <tr><th>Candidate</th><th>CV</th><th>Match</th><th>Status</th></tr>
-              <tr><td><span class="av">AM</span>Candidate 014</td><td>Arabic · scan</td><td><span class="bar"><i style="width:92%"></i></span>92</td><td><span class="pill p-ok">Interview</span></td></tr>
-              <tr><td><span class="av">SK</span>Candidate 027</td><td>English · PDF</td><td><span class="bar"><i style="width:86%"></i></span>86</td><td><span class="pill p-ok">Interview</span></td></tr>
-              <tr><td><span class="av">FH</span>Candidate 003</td><td>Arabic · PDF</td><td><span class="bar"><i style="width:74%"></i></span>74</td><td><span class="pill p-n">Review</span></td></tr>
-              <tr><td><span class="av">NR</span>Candidate 041</td><td>English · scan</td><td><span class="bar"><i style="width:61%"></i></span>61</td><td><span class="pill p-n">Review</span></td></tr>
-              <tr><td><span class="av">MQ</span>Candidate 009</td><td>Arabic · DOCX</td><td><span class="bar"><i style="width:33%"></i></span>33</td><td><span class="pill p-bad">Not a fit</span></td></tr>
-            </table>
-          </div>
-        </div>
-      </div>
+      <h3>AI CV screening</h3>
+      <p class="ctx">Recruitment · Construction company · 2025</p>
+      <p class="body">Hiring rounds brought in hundreds of CVs in Arabic and English, many of them scanned. I oversaw an automated pipeline that reads each CV with OCR, scores it against the role's requirements and hands HR a ranked shortlist to review. The shortlist at the top of this page shows how it looks.</p>
+      <dl class="memo"><dt>Before</dt><dd>Every CV read by hand, one at a time</dd><dt>After</dt><dd class="after">Hundreds of applications ranked across five roles</dd></dl>
+      <p class="tools">OCR · Claude · n8n · Arabic and English</p>
     </article>
 
-    <article class="case">
-      <div>
-        <h2>Centralized PMO reporting</h2>
+    <article class="case split rev">
+      <div class="txt">
+        <h3>Centralized PMO reporting</h3>
         <p class="ctx">Project management office · Construction company · 2025–2026</p>
-        <dl>
-          <dt>Problem</dt><dd>Eight government projects ran at once, and each sent its weekly status in its own file and format. Management had no single view.</dd>
-          <dt>What I built</dt><dd>Interactive daily and weekly HTML reports that pull every project into one page, with status, progress and open issues, replacing the static files.</dd>
-        </dl>
-        <div class="outcome"><b>8</b><span>concurrent projects in one weekly report</span></div>
-        <p class="stack">HTML reporting · KPI design · Claude Code</p>
+        <p class="body">Eight government projects ran at the same time, and each sent its weekly status in its own file and format. I built interactive daily and weekly HTML reports that bring every project into one page, with progress, status and open issues.</p>
+        <dl class="memo"><dt>Before</dt><dd>A folder of static files, one format per project</dd><dt>After</dt><dd class="after">One weekly report for eight projects</dd></dl>
+        <p class="tools">HTML reporting · KPI design · Claude Code</p>
       </div>
-      <div class="vis">
-        <div class="win">
-          <div class="wbar"><span class="dots"><i></i><i></i><i></i></span><span class="t">Weekly status — Week 46</span><span class="tag">sample data</span></div>
-          <div class="wbody">
-            <table>
-              <tr><th>Project</th><th>Progress</th><th>Status</th><th>Open issues</th></tr>
-              <tr><td>Project 01</td><td><span class="bar"><i style="width:78%"></i></span>78%</td><td><span class="pill p-ok">On track</span></td><td>2</td></tr>
-              <tr><td>Project 02</td><td><span class="bar"><i style="width:64%"></i></span>64%</td><td><span class="pill p-ok">On track</span></td><td>1</td></tr>
-              <tr><td>Project 03</td><td><span class="bar"><i style="width:35%"></i></span>35%</td><td><span class="pill p-bad">Delayed</span></td><td>6</td></tr>
-              <tr><td>Project 04</td><td><span class="bar"><i style="width:90%"></i></span>90%</td><td><span class="pill p-ok">On track</span></td><td>0</td></tr>
-              <tr><td>Project 05</td><td><span class="bar"><i style="width:52%"></i></span>52%</td><td><span class="pill p-warn">At risk</span></td><td>4</td></tr>
-              <tr><td>Project 06</td><td><span class="bar"><i style="width:71%"></i></span>71%</td><td><span class="pill p-ok">On track</span></td><td>1</td></tr>
-            </table>
+      <div class="win">
+        <div class="wbar"><span class="t">Weekly status · Week 46</span><span class="note">sample data</span></div>
+        <div class="wbody">
+          <table>
+            <tr><th>Project</th><th>Progress</th><th>Status</th><th class="num">Open issues</th></tr>
+            <tr><td>Project 01</td><td><span class="meter"><i style="width:78%"></i></span>78%</td><td><span class="st ok">On track</span></td><td class="num">2</td></tr>
+            <tr><td>Project 02</td><td><span class="meter"><i style="width:64%"></i></span>64%</td><td><span class="st ok">On track</span></td><td class="num">1</td></tr>
+            <tr><td>Project 03</td><td><span class="meter"><i style="width:35%"></i></span>35%</td><td><span class="st bad">Delayed</span></td><td class="num">6</td></tr>
+            <tr><td>Project 04</td><td><span class="meter"><i style="width:90%"></i></span>90%</td><td><span class="st ok">On track</span></td><td class="num">0</td></tr>
+            <tr><td>Project 05</td><td><span class="meter"><i style="width:52%"></i></span>52%</td><td><span class="st warn">At risk</span></td><td class="num">4</td></tr>
+            <tr><td>Project 06</td><td><span class="meter"><i style="width:71%"></i></span>71%</td><td><span class="st ok">On track</span></td><td class="num">1</td></tr>
+          </table>
+        </div>
+      </div>
+    </article>
+
+    <article class="case stack-v">
+      <div class="txt">
+        <div>
+          <h3>AI sales agent for B2B services</h3>
+          <p class="ctx">Business development · Business-services firm · 2026</p>
+          <p class="tools">Next.js · Prisma · Claude API · WhatsApp · IMAP/SMTP</p>
+        </div>
+        <div>
+          <p class="body">The sales team searched directories and maps for prospects, then wrote every message by hand. I built a web platform that finds companies, matches each one's need to a service and drafts WhatsApp and email messages in Saudi Arabic. An autopilot sends in batches during working hours, follows up on silence, reads replies, books consultations and emails a daily report.</p>
+          <dl class="memo"><dt>Before</dt><dd>Manual search and one message at a time</dd><dt>After</dt><dd class="after">Prospecting and follow-up run through the working day</dd></dl>
+        </div>
+      </div>
+      <div class="win">
+        <div class="wbar"><span class="t">Pipeline · this week</span><span class="note">sample data</span></div>
+        <div class="wbody">
+          <div class="board">
+            <div class="col"><h4>New <span>12</span></h4><div class="tk"><b>Contractor</b><span>Riyadh · grade 3</span></div><div class="tk"><b>Factory</b><span>Al-Kharj</span></div></div>
+            <div class="col"><h4>Contacted <span>7</span></h4><div class="tk"><b>Contractor</b><span>Dammam · WhatsApp</span></div><div class="tk"><b>Logistics</b><span>Riyadh · email</span></div></div>
+            <div class="col"><h4>Replied <span>3</span></h4><div class="tk"><b>Contractor</b><span>Riyadh · asked for pricing</span></div></div>
+            <div class="col"><h4>Booked <span>2</span></h4><div class="tk on"><b>Factory</b><span>Sun 10:30 · consultation</span></div></div>
+          </div>
+          <div class="feed">
+            <div><time>08:00</time>Found 20 new companies</div>
+            <div><time>08:30</time>Sent the first batch of 5 WhatsApp messages</div>
+            <div><time>09:05</time>New reply, consultation booked for Sunday</div>
+            <div><time>16:00</time>Daily report emailed</div>
           </div>
         </div>
       </div>
     </article>
 
-    <article class="case">
-      <div>
-        <h2>AI sales agent for B2B services</h2>
-        <p class="ctx">Business development · Business-services firm · 2026</p>
-        <dl>
-          <dt>Problem</dt><dd>The sales team spent hours searching directories and maps for prospects, then wrote every message by hand.</dd>
-          <dt>What I built</dt><dd>A full web platform that finds companies, analyses each one's need, drafts WhatsApp and email messages in Saudi Arabic, and tracks them on a pipeline board. An autopilot sends in batches during working hours, follows up on silence, reads replies, books consultations and emails a daily report.</dd>
-        </dl>
-        <p class="stack">Next.js · Prisma · Claude API · WhatsApp · IMAP/SMTP</p>
-      </div>
-      <div class="vis">
-        <div class="win">
-          <div class="wbar"><span class="dots"><i></i><i></i><i></i></span><span class="t">Pipeline</span><span class="tag">sample data</span></div>
-          <div class="wbody">
-            <div class="board">
-              <div class="col"><h4>New <span>12</span></h4><div class="tk"><b>Contractor</b><span>Riyadh · grade 3</span></div><div class="tk"><b>Factory</b><span>Al-Kharj</span></div></div>
-              <div class="col"><h4>Contacted <span>7</span></h4><div class="tk"><b>Contractor</b><span>Dammam · WhatsApp</span></div><div class="tk"><b>Logistics</b><span>Riyadh · email</span></div></div>
-              <div class="col"><h4>Replied <span>3</span></h4><div class="tk"><b>Contractor</b><span>Riyadh · asked for pricing</span></div></div>
-              <div class="col"><h4>Booked <span>2</span></h4><div class="tk"><b>Factory</b><span>Sun 10:30 · consultation</span></div></div>
-            </div>
-            <div class="feed">
-              <div><time>08:00</time>Found 20 new companies</div>
-              <div><time>08:30</time>Sent first batch of 5 WhatsApp messages</div>
-              <div><time>09:05</time>New reply, consultation booked</div>
-              <div><time>16:00</time>Daily report emailed</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </article>
-
-    <article class="case">
-      <div>
-        <h2>Bilingual company websites</h2>
+    <article class="case split">
+      <div class="txt">
+        <h3>Bilingual company websites</h3>
         <p class="ctx">Web design and build · 2026</p>
-        <dl>
-          <dt>Problem</dt><dd>Small companies needed a credible web presence in Arabic and English, plus a brand they could apply consistently.</dd>
-          <dt>What I built</dt><dd>Live sites with full right-to-left support and a brand guide for each (logo, colour, type and tone). Shown here: the site for a Riyadh freight company.</dd>
-        </dl>
-        <p class="stack">HTML/CSS · RTL · Brand guidelines · GitHub Pages</p>
+        <p class="body">Live Arabic and English sites with full right-to-left support, each with a brand guide covering logo, colour, type and tone. This one is for a Riyadh freight company.</p>
+        <dl class="memo"><dt>Before</dt><dd>No website, no consistent brand</dd><dt>After</dt><dd class="after">A live bilingual site and a brand guide</dd></dl>
+        <p class="tools">HTML and CSS · RTL · Brand guidelines · GitHub Pages</p>
       </div>
-      <div class="vis">
-        <div class="win">
-          <div class="wbar"><span class="dots"><i></i><i></i><i></i></span><span class="t">Freight company website</span></div>
-          <div class="shot"><img src="img/regalex.jpg" alt="Homepage of a bilingual freight-company website" width="1440" height="900" loading="lazy"></div>
-        </div>
+      <div class="win">
+        <div class="wbar"><span class="t">Freight company · homepage</span></div>
+        <div class="shot"><img src="img/regalex.jpg" alt="Homepage of a bilingual freight-company website" width="1440" height="900" loading="lazy"></div>
       </div>
     </article>
 
     <div class="more">
-      <div><h3>Tenders radar</h3><p>An internal web app that logs opportunities from the Etimad portal and tracks every deadline, replacing daily manual checks.</p></div>
-      <div><h3>B2B outreach automation</h3><p>A Make.com scenario that prepares, sends and logs outreach emails and their replies.</p></div>
-      <div><h3>Team of AI agents</h3><p>Personal project: content, research, video and planning agents, each with its own role and rules. I review and approve the output.</p></div>
-      <div><h3>Strategy and governance</h3><p>Wrote my department's first strategic and operational plan and set up a documented decision-tracking system.</p></div>
+      <div><h4>Tenders radar</h4><p>An internal web app that logs opportunities from the Etimad portal and tracks every deadline, replacing daily manual checks.</p></div>
+      <div><h4>B2B outreach automation</h4><p>A Make.com scenario that prepares, sends and logs outreach emails and their replies.</p></div>
+      <div><h4>A team of AI agents</h4><p>A personal project with content, research, video and planning agents, each with its own role and rules. I review and approve what they produce.</p></div>
+      <div><h4>Strategy and governance</h4><p>Wrote my department's first strategic and operational plan and set up a documented decision-tracking system.</p></div>
     </div>
   </main>
 
-  <section class="res" id="experience">
-    <p class="label">Experience</p>
+  <section class="block" id="experience">
+    <div class="sec-head"><h2>Experience</h2><span>Riyadh</span></div>
     <div class="rows">
-      <div class="r"><div class="yr">2026 — now</div><div><h3>HR Specialist, Training &amp; Development</h3><p class="org">Riyadh</p><p>Training management, impact measurement and HR self-service, built as digital tools with human review.</p></div></div>
-      <div class="r"><div class="yr">2025 — 2026</div><div><h3>Senior Follow-up Coordinator, PMO &amp; Governance</h3><p class="org">Construction company, Riyadh</p><p>Reporting across eight government projects, AI tooling for the department, client meetings and site visits.</p></div></div>
-      <div class="r"><div class="yr">2023 — 2025</div><div><h3>Operations &amp; Administrative Assistant</h3><p class="org">Construction company, Riyadh · part-time</p><p>HR operations and compliance on Qiwa, Mudad, Muqeem and GOSI, onboarding, medical insurance, and daily tender monitoring.</p></div></div>
-      <div class="r"><div class="yr">2023</div><div><h3>Administrative Intern</h3><p class="org">Investment company, Riyadh</p><p>Administrative coordination, documentation and reporting.</p></div></div>
+      <div class="r"><div class="yr">2026 – now</div><div><h4>HR Specialist, Training and Development</h4><p class="org">Human resources</p><p>Training management, impact measurement and HR self-service, built as digital tools with human review.</p></div></div>
+      <div class="r"><div class="yr">2025 – 2026</div><div><h4>Senior Follow-up Coordinator, PMO and Governance</h4><p class="org">Construction company</p><p>Reporting across eight government projects, AI tooling for the department, client meetings and site visits.</p></div></div>
+      <div class="r"><div class="yr">2023 – 2025</div><div><h4>Operations and Administrative Assistant</h4><p class="org">Construction company · part-time</p><p>HR operations and compliance on Qiwa, Mudad, Muqeem and GOSI, onboarding, medical insurance and daily tender monitoring.</p></div></div>
+      <div class="r"><div class="yr">2023</div><div><h4>Administrative Intern</h4><p class="org">Investment company</p><p>Administrative coordination, documentation and reporting.</p></div></div>
     </div>
   </section>
 
-  <section class="res">
-    <p class="label">Skills and education</p>
-    <div class="two">
-      <div><h3>HR</h3><ul><li>HR systems and self-service</li><li>Approval workflows</li><li>Training needs and impact</li><li>Qiwa · Mudad · Muqeem · GOSI</li></ul></div>
-      <div><h3>Building</h3><ul><li>Claude Code and AI agents</li><li>n8n and Make.com</li><li>OCR and RAG assistants</li><li>KPI dashboards and reports</li></ul></div>
-      <div><h3>Education</h3><ul><li>B.B.A. Finance, Shaqra University, 2025</li><li>Intro to AI Agents and Agentic AI, Udemy, 2026</li><li>Process Automation, Make Academy</li><li>Strategic HR Planning, TVTC</li></ul></div>
+  <section class="block">
+    <div class="sec-head"><h2>Skills and education</h2><span>Arabic native · English C1</span></div>
+    <div class="cols">
+      <div><h4>HR</h4><ul><li>HR systems and self-service</li><li>Approval workflows</li><li>Training needs and impact</li><li>Qiwa, Mudad, Muqeem, GOSI</li></ul></div>
+      <div><h4>Building</h4><ul><li>Claude Code and AI agents</li><li>n8n and Make.com</li><li>OCR and RAG assistants</li><li>KPI dashboards and reports</li></ul></div>
+      <div><h4>Education</h4><ul><li>B.B.A. Finance, Shaqra University, 2025</li><li>Intro to AI Agents and Agentic AI, Udemy, 2026</li><li>Process Automation, Make Academy</li><li>Strategic HR Planning, TVTC</li></ul></div>
     </div>
   </section>
 
   <section class="contact" id="contact">
-    <h2>Have a process that's eating your team's time? Let's talk.</h2>
-    <div class="links">
-      <button class="btn dark copy" type="button" data-v="alarifi.j.abdullah@gmail.com">alarifi.j.abdullah@gmail.com <small>copy</small></button>
-      <a class="btn" href="https://www.linkedin.com/in/abdullah-alarifi-sa" target="_blank" rel="noopener">LinkedIn <small>↗</small></a>
-      <button class="btn copy" type="button" data-v="+966501444443">+966 50 144 4443 <small>copy</small></button>
-    </div>
+    <h2>Email is the quickest way to reach me</h2>
+    <dl>
+      <dt>Email</dt><dd class="v" id="v1">alarifi.j.abdullah@gmail.com</dd><dd><button class="copy" type="button" data-v="alarifi.j.abdullah@gmail.com">Copy</button></dd>
+      <dt>Phone</dt><dd class="v">+966 50 144 4443</dd><dd><button class="copy" type="button" data-v="+966501444443">Copy</button></dd>
+      <dt>LinkedIn</dt><dd class="v"><a class="link" href="https://www.linkedin.com/in/abdullah-alarifi-sa" target="_blank" rel="noopener">abdullah-alarifi-sa</a></dd><dd></dd>
+    </dl>
   </section>
 </div>
-<footer><div class="wrap">© 2026 Abdullah Alarifi · Interfaces marked “sample data” show how each system works, without real data.</div></footer>
+<footer><div class="wrap">© 2026 Abdullah Alarifi · Screens marked “sample data” show how each tool works, without real data</div></footer>
 <script>
 document.querySelectorAll('.copy').forEach(function(b){
   b.addEventListener('click',function(){
-    var s=b.querySelector('small'),old=s.textContent;
-    function ok(){s.textContent='copied';setTimeout(function(){s.textContent=old},1500)}
-    try{navigator.clipboard.writeText(b.dataset.v).then(ok,function(){})}catch(e){}
+    try{navigator.clipboard.writeText(b.dataset.v).then(function(){b.textContent='Copied';setTimeout(function(){b.textContent='Copy'},1500)},function(){})}catch(e){}
   });
 });
 </script>
