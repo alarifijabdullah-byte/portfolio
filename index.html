@@ -4,10 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Abdullah Alarifi</title>
-<meta name="description" content="I work in HR in Riyadh, and I build the tools my teams use: CV screening, project reporting and a B2B sales platform.">
+<meta name="description" content="I work in HR in Riyadh, and I build the tools my teams use: training management, HR self-service, CV screening and project reporting.">
 <meta property="og:title" content="Abdullah Alarifi">
 <meta property="og:description" content="I work in HR in Riyadh, and I build the tools my teams use.">
-<meta property="og:image" content="img/sales-dashboard.jpg">
+<meta property="og:image" content="https://alarifijabdullah-byte.github.io/portfolio/img/sales-dashboard.jpg">
+<meta property="og:url" content="https://alarifijabdullah-byte.github.io/portfolio/">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#ffffff">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%2300704a'/%3E%3Ctext x='16' y='22' font-family='Arial' font-weight='700' font-size='15' fill='white' text-anchor='middle'%3EA%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -113,6 +116,7 @@ header.top[data-enter]{animation:rise .8s cubic-bezier(.16,1,.3,1) both}
 .reel img{transition:transform .5s cubic-bezier(.16,1,.3,1)}
 .reel figure:hover img{transform:translateY(-4px)}
 @media (prefers-reduced-motion:reduce){header.top[data-enter],.hello[data-enter] h1,.hello[data-enter] p,.stage .tilt{animation:none!important;transform:none!important;filter:none!important;opacity:1!important}}
+.status{display:inline-block;font-size:15px;color:var(--green);border:1px solid currentColor;border-radius:6px;padding:2px 10px;margin:0 0 24px}
 </style>
 </head>
 <body>
@@ -124,37 +128,41 @@ header.top[data-enter]{animation:rise .8s cubic-bezier(.16,1,.3,1) both}
 
   <section class="hello" data-enter>
     <h1>I work in HR in Riyadh, and I build the tools my teams end up running on.</h1>
-    <p>Three years between HR operations and a project-management office taught me where the hours go: reading CVs one by one, chasing reports from site to site, writing the same message over and over. I don't code the traditional way. I design the process, build it with Claude Code and AI agents, and a person still makes the call.</p>
+    <p>Three years between HR operations and a project-management office taught me where the hours go: reading CVs one by one, chasing reports from site to site, answering the same policy question again and again. I don't code the traditional way. I design the process, build it with Claude Code and AI agents, and a person still makes the call.</p>
   </section>
 
   <main id="work">
     <article class="work" style="padding-top:0">
-      <figure class="stage">
-        <img class="tilt" src="img/sales-dashboard.jpg" alt="Sales dashboard of the B2B platform, in Arabic, with demo data" width="1440" height="900">
-        <figcaption>The sales dashboard. The platform runs in Arabic; company names are replaced with placeholders.</figcaption>
-      </figure>
-      <div class="text" style="margin-top:56px">
-        <h2>A sales platform that prospects on its own</h2>
-        <p class="when">For a business-services firm, 2026</p>
-        <p>The sales team spent their mornings on maps and contractor directories, then wrote every WhatsApp message by hand. I built them a web platform that does the searching, works out what each company probably needs, and drafts the first message in Saudi Arabic.</p>
-        <p>The part I'm proudest of is the autopilot. Every working day it finds new companies, sends messages in small batches, follows up with anyone who went quiet, reads the replies, books consultations and emails a summary when the day ends. <strong>Nobody has to open it for the work to happen.</strong></p>
-        <p>Built with Next.js, Prisma and the Claude API, connected to WhatsApp and email.</p>
+      <div class="text">
+        <h2>A training platform, from request to impact</h2>
+        <p class="when">My current role in Training and Development, 2026</p>
+        <p class="status">In development. Pilot planned for December 2026.</p>
+        <p>Training requests, follow-up and impact measurement usually live in separate files and email threads. I'm building one platform that carries a training from the first request through to measuring its impact.</p>
+        <p>After each training, AI drafts the follow-up messages to the employee and their manager. <strong>An HR specialist reviews every message before it goes out.</strong></p>
       </div>
-      <div class="reel" tabindex="0" aria-label="More screens from the sales platform">
-        <figure><img src="img/sales-agent.jpg" alt="Agent screen that analyses a company and drafts messages" width="1440" height="900" loading="lazy"><figcaption>The agent reads a company, names its likely need and drafts a WhatsApp message, an email and a call script.</figcaption></figure>
-        <figure><img src="img/sales-crm.jpg" alt="Pipeline board" width="1440" height="900" loading="lazy"><figcaption>The pipeline. Companies move from new to closed, with their replies on their cards.</figcaption></figure>
-        <figure><img src="img/sales-scraper.jpg" alt="Prospect search screen" width="1440" height="900" loading="lazy"><figcaption>Prospect search across three sources, filtered by city and sector.</figcaption></figure>
-        <figure><img src="img/sales-inbox.jpg" alt="Automatic WhatsApp replies" width="1440" height="900" loading="lazy"><figcaption>Automatic WhatsApp replies drawn from the firm's own service notes, with consultation booking built in.</figcaption></figure>
+      <ol class="steps" style="grid-template-columns:repeat(3,minmax(0,1fr))" aria-label="How the training platform works">
+        <li><b>Request</b><span>A training need is raised and tracked</span></li>
+        <li><b>Follow up</b><span>AI drafts messages; HR reviews them</span></li>
+        <li><b>Measure</b><span>Impact is measured after the training</span></li>
+      </ol>
+    </article>
+
+    <article class="work">
+      <div class="text">
+        <h2>HR self-service that knows company policy</h2>
+        <p class="when">My current role, 2026</p>
+        <p class="status">Prototype in development, 15 modules.</p>
+        <p>Many HR requests are routine policy questions, yet each one still waits for someone in HR. I'm building a self-service prototype that applies company policies automatically across 15 modules.</p>
+        <p>It includes an AI assistant that answers employees' questions about company policy and helps them sort out day-to-day HR issues. When HR answers something the assistant couldn't, it learns from that answer.</p>
       </div>
-      <p class="reel-hint">Scroll sideways for four more screens.</p>
     </article>
 
     <article class="work">
       <div class="text">
         <h2>Screening CVs straight from the application form</h2>
-        <p class="when">For a construction company's recruitment, 2025</p>
-        <p>Candidates applied through an online form, and HR then downloaded every CV and read it, in Arabic or English, often as a photo of a printed page. I oversaw the build of a platform that takes it from there. It pulls each CV out of the form, reads it even when it's scanned, drops the ones missing the role's must-haves and ranks the rest.</p>
-        <p>HR opens a shortlist instead of a folder. We ran it on five open roles.</p>
+        <p class="when">Recruitment at a construction company, 2025</p>
+        <p>Candidates applied through an online form, and HR then downloaded every CV and read it, in Arabic or English, some of them scanned. I oversaw the build of a platform that takes it from there. It pulls each CV out of the form, reads it even when it's scanned, drops the ones missing the role's must-haves and ranks the rest.</p>
+        <p>HR opens a shortlist instead of a folder. We used it for five open roles.</p>
       </div>
       <ol class="steps" aria-label="How the screening platform works">
         <li><b>Apply</b><span>Candidate fills in the form</span></li>
@@ -168,27 +176,41 @@ header.top[data-enter]{animation:rise .8s cubic-bezier(.16,1,.3,1) both}
 
     <article class="work">
       <div class="text">
-        <h2>One report for eight projects and thirty-odd sites</h2>
-        <p class="when">For a construction company's project-management office, 2025 to 2026</p>
-        <p>We had eight government projects running at once, spread over more than thirty sites, and every site sent its own report in its own format. Putting the weekly picture together for management meant days of copying between files.</p>
-        <p>I built interactive daily and weekly reports in HTML that roll every site into its project and every project onto one page, showing progress, status and open issues, which management could open on any device.</p>
+        <h2>One report for eight projects and more than thirty sites</h2>
+        <p class="when">Project-management office at a construction company, 2025 to 2026</p>
+        <p>We had eight government projects running at once, spread over more than thirty sites, and every site sent its own report in its own format. Building the weekly picture for management meant copying between files by hand.</p>
+        <p>I built interactive daily and weekly reports in HTML that roll every site into its project and every project onto one page, showing progress, status and open issues. They replaced the static files.</p>
       </div>
     </article>
 
     <article class="work">
       <div class="text">
-        <h2>Websites for small companies</h2>
-        <p class="when">2026</p>
-        <p>Bilingual sites, Arabic first with a full right-to-left layout, each with a short brand guide for logo, colour, type and tone. So far: a freight company in Riyadh and a small creative studio.</p>
+        <h2>A sales platform that prospects on its own</h2>
+        <p class="when">Built for a business-services firm, 2026</p>
+        <p>Outside HR, I built a web platform for a firm that sells services to contractors, developers and factories. It searches maps and business directories for prospects, works out what each company probably needs, and drafts the first WhatsApp message, email and call script in Saudi Arabic.</p>
+        <p>Its autopilot runs through the working day: it finds new companies, sends messages in small batches, follows up with anyone who went quiet, reads the replies, books consultations and emails a summary at the end of the day.</p>
+        <p>Built with Next.js, Prisma and the Claude API, connected to WhatsApp and email.</p>
       </div>
+      <figure class="stage">
+        <img class="tilt" src="img/sales-dashboard.jpg" alt="Sales dashboard of the platform, in Arabic, with demo data" width="1440" height="900" loading="lazy">
+        <figcaption>The sales dashboard, shown with demo data. Names and figures on screen are not real results.</figcaption>
+      </figure>
+      <div class="reel" tabindex="0" aria-label="More screens from the sales platform">
+        <figure><img src="img/sales-agent.jpg" alt="Agent screen that analyses a company and drafts messages" width="1440" height="900" loading="lazy"><figcaption>The agent reads a company, names its likely need and drafts a WhatsApp message, an email and a call script.</figcaption></figure>
+        <figure><img src="img/sales-crm.jpg" alt="Pipeline board" width="1440" height="900" loading="lazy"><figcaption>The pipeline. Companies move from new to closed, with their replies on their cards.</figcaption></figure>
+        <figure><img src="img/sales-scraper.jpg" alt="Prospect search screen" width="1440" height="900" loading="lazy"><figcaption>Prospect search across three sources, filtered by city and sector.</figcaption></figure>
+        <figure><img src="img/sales-inbox.jpg" alt="Automatic WhatsApp replies" width="1440" height="900" loading="lazy"><figcaption>Automatic WhatsApp replies drawn from the firm's own service notes, with consultation booking built in.</figcaption></figure>
+      </div>
+      <p class="reel-hint">Scroll sideways for four more screens.</p>
     </article>
   </main>
 
   <section class="also">
     <h2>Smaller things</h2>
     <dl>
-      <div><dt>Tenders radar</dt><dd>A small web app that logs opportunities from the Etimad portal and keeps every deadline in view, so nobody checks the portal by hand each morning.</dd></div>
-      <div><dt>Outreach on Make.com</dt><dd>A scenario that prepares, sends and logs B2B outreach emails and their replies.</dd></div>
+      <div><dt>Tenders radar</dt><dd>A web app for tracking tender opportunities from the Etimad portal and following up on each one before its deadline.</dd></div>
+      <div><dt>Outreach on Make.com</dt><dd>An automated B2B outreach workflow that prepares, sends and logs emails and their replies.</dd></div>
+      <div><dt>Bilingual websites</dt><dd>Arabic and English sites with a full right-to-left layout and a short brand guide each, for a freight company and a small creative studio.</dd></div>
       <div><dt>My own agent team</dt><dd>Content, research, video and planning agents, each with its own role and rules. They draft; I approve.</dd></div>
       <div><dt>A department's first plan</dt><dd>I wrote my department's first strategic and operational plan and set up a documented way to track decisions.</dd></div>
     </dl>
@@ -197,7 +219,7 @@ header.top[data-enter]{animation:rise .8s cubic-bezier(.16,1,.3,1) both}
   <section class="cv" id="cv">
     <h2>Where I've worked</h2>
     <ol>
-      <li><span class="yr">2026 to now</span><div><b>HR Specialist, Training and Development</b><span>Turning training management, from request to impact measurement, and HR self-service into digital tools, with human review.</span></div></li>
+      <li><span class="yr">2026 to now</span><div><b>HR Specialist, Training and Development</b><span>Building the training platform and the HR self-service prototype above, and preparing executive presentations and summaries for management.</span></div></li>
       <li><span class="yr">2025 to 2026</span><div><b>Senior Follow-up Coordinator, PMO and Governance</b><span>Construction company. Reporting for eight government projects, AI tools for the department, client meetings and site visits.</span></div></li>
       <li><span class="yr">2023 to 2025</span><div><b>Operations and Administrative Assistant</b><span>Same company, part-time. HR and compliance files on Qiwa, Mudad, Muqeem and GOSI, onboarding, medical insurance and daily tender monitoring.</span></div></li>
       <li><span class="yr">2023</span><div><b>Administrative Intern</b><span>Investment company. Coordination, documents and reporting.</span></div></li>
